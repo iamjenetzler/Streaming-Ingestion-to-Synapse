@@ -1,0 +1,51 @@
+[2020-10-21T22:51:19.4930359Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:51:20.6565819Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:51:22.7475956Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:51:25.8562683Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:51:29.9041852Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:51:34.9702737Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:51:40.9725859Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:51:48.0442253Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:51:56.0886331Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:52:05.1013178Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:52:15.1533674Z] [Information] Put token failed. status-code: 401, status-description: InvalidSignature: The token has an invalid signature..
+[2020-10-21T22:53:25.1749207Z] [Exception] The operation did not complete within the allocated time 00:01:09.9500954 for object requestresponseamqplink7.
+
+Server stack trace: 
+
+
+Exception rethrown at [0]: 
+   at Microsoft.ServiceBus.Common.ExceptionDispatcher.Throw(Exception exception)
+   at Microsoft.ServiceBus.Common.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at Microsoft.ServiceBus.Messaging.AmqpClient.AmqpCbsLink.SendTokenAsyncResult.<>c__DisplayClass39.<GetAsyncSteps>b__35(SendTokenAsyncResult thisPtr, IAsyncResult r)
+   at Microsoft.ServiceBus.Messaging.IteratorAsyncResult`1.StepCallback(IAsyncResult result)
+
+Exception rethrown at [1]: 
+   at Microsoft.ServiceBus.Common.ExceptionDispatcher.Throw(Exception exception)
+   at Microsoft.ServiceBus.Common.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at Microsoft.ServiceBus.Messaging.Amqp.AmqpMessagingFactory.OpenEntityAsyncResult.<GetAsyncSteps>b__137(OpenEntityAsyncResult thisPtr, IAsyncResult r)
+   at Microsoft.ServiceBus.Messaging.IteratorAsyncResult`1.StepCallback(IAsyncResult result)
+
+Exception rethrown at [2]: 
+   at Microsoft.ServiceBus.Common.ExceptionDispatcher.Throw(Exception exception)
+   at Microsoft.ServiceBus.Common.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at Microsoft.ServiceBus.Messaging.Amqp.AmqpMessageSender.EndCreateLink(IAsyncResult result)
+   at Microsoft.ServiceBus.Messaging.Amqp.FaultTolerantObject`1.CreateAsyncResult.<GetAsyncSteps>b__4(CreateAsyncResult thisPtr, IAsyncResult r)
+   at Microsoft.ServiceBus.Messaging.IteratorAsyncResult`1.StepCallback(IAsyncResult result)
+
+Exception rethrown at [3]: 
+   at Microsoft.ServiceBus.Common.ExceptionDispatcher.Throw(Exception exception)
+   at Microsoft.ServiceBus.Common.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at Microsoft.ServiceBus.Messaging.Amqp.FaultTolerantObject`1.OnEndCreateInstance(IAsyncResult asyncResult)
+   at Microsoft.ServiceBus.Messaging.SingletonManager`1.EndGetInstance(IAsyncResult asyncResult)
+   at Microsoft.ServiceBus.Messaging.ClientEntity.EndOpen(IAsyncResult result)
+   at Microsoft.ServiceBus.Messaging.OpenOnceManager.OnEndCreateInstance(IAsyncResult asyncResult)
+   at Microsoft.ServiceBus.Messaging.SingletonManager`1.EndGetInstance(IAsyncResult asyncResult)
+   at Microsoft.ServiceBus.Messaging.OpenOnceManager.OpenOnceManagerAsyncResult`1.OpenComplete(IAsyncResult result)
+   at Microsoft.ServiceBus.Common.AsyncResult.AsyncCompletionWrapperCallback(IAsyncResult result)
+
+Exception rethrown at [4]: 
+   at Microsoft.ServiceBus.Common.ExceptionDispatcher.Throw(Exception exception)
+   at Microsoft.ServiceBus.Common.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at Microsoft.ServiceBus.Messaging.EventHubClient.Send(EventData data)
+   at SensorEventGenerator.EventHubObserver.OnNext(List`1 sensorData) in D:\test\SensorEventGenerator\EventHubObserver.cs:line 41
